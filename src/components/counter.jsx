@@ -4,20 +4,22 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <div className="row">
-          <div className="col-md-1">
+        <div data-cy="category" className="row">
+          <div data-cy="item-counter" className="col-md-1">
             <span style={{ fontSize: 24 }} className={this.getBadgeClasses()}>
               {this.formatCount()}
             </span>
           </div>
           <div className="col-md-4">
             <button
+              data-cy="add-item" 
               className="btn btn-secondary"
               onClick={() => this.props.onIncrement(this.props.counter)}
             >
               <i className="fa fa-plus-circle" aria-hidden="true" />
             </button>
             <button
+              data-cy="delete-item"
               className="btn btn-info m-2"
               onClick={() => this.props.onDecrement(this.props.counter)}
               disabled={this.props.counter.value === 0 ? "disabled" : ""}
@@ -25,6 +27,7 @@ class Counter extends Component {
               <i className="fa fa-minus-circle" aria-hidden="true" />
             </button>
             <button
+              data-cy="delete-category"
               className="btn btn-danger"
               onClick={() => this.props.onDelete(this.props.counter.id)}
             >

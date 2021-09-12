@@ -19,9 +19,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-quiet": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress-test": "start-server-and-test start-quiet http://localhost:3000 cypress:run",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,5 +35,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "cypress": "^8.3.1",
+    "start-server-and-test": "^1.14.0"
+  }
 }
